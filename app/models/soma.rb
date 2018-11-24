@@ -1,0 +1,2 @@
+class Soma < ApplicationRecord
+end

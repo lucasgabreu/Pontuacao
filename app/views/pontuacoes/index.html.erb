@@ -1,0 +1,53 @@
+<html>
+<div class="container">
+    <body>
+        <h1>Total</h1>
+          <table class= "table table-bordered table-hover" >
+              <thread>
+                  <tr>
+                      <td>Nome</td>
+                      <td>Total</td>
+                  </tr>
+              </thread>
+              <tbody>
+                <% @total.each do |soma| %>
+                  <tr>
+                      <td><%= soma.nome %></td>
+                      <td><%= soma.total %></td>
+                  </tr>
+                  <% end %>
+
+
+              </tbody>
+          </table>
+
+          <h1>Pontuações</h1>
+            <table class= "table table-bordered table-hover" >
+                <thread>
+                    <tr>
+                        <td>Data</td>
+                        <td>Nome</td>
+                        <td>Codigo</td>
+                        <td>Nota</td>
+                    </tr>
+                </thread>
+                <tbody>
+                  <% @notas.each do |rank| %>
+                    <tr>
+                        <td><%= rank.data %></td>
+                        <td><%= rank.nome %></td>
+                        <td><%= rank.codigo %></td>
+                        <td><%= rank.nota %></td>
+                    </tr>
+                    <% end %>
+
+
+                </tbody>
+            </table>
+
+            <hr>
+              <%= paginate @notas %>
+            <hr>
+    </body>
+  </div>
+</html>

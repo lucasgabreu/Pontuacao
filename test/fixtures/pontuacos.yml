@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: MyString
+  nome: MyString
+  codigo: 1
+  nota: 9.99
+
+two:
+  data: MyString
+  nome: MyString
+  codigo: 1
+  nota: 9.99
