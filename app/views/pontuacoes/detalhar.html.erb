@@ -1,0 +1,35 @@
+<html>
+<div class="container">
+    <body>
+          <h1>Pontuações</h1>
+            <table class= "table table-bordered table-hover" >
+                <thread>
+                    <tr>
+                        <td>Data</td>
+                        <td>Nome</td>
+                        <td>Codigo</td>
+                        <td>Nota</td>
+                    </tr>
+                </thread>
+                <tbody>
+                  <% @notas.each do |nota| %>
+                    <tr>
+                        <td><%= nota.data %></td>
+                        <td><%= nota.nome %></td>
+                        <td><%= nota.codigo %></td>
+                        <td><%= nota.nota %></td>
+                    </tr>
+                    <% end %>
+
+
+                </tbody>
+            </table>
+
+            <hr>
+              <%= paginate @notas %>
+            <hr>
+    </body>
+
+    <%= link_to "Voltar",root_url,class: "btn btn-primary"%>
+  </div>
+</html>

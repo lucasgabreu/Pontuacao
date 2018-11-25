@@ -1,5 +1,5 @@
 <html>
-<div class="container">
+  <div class="container">
     <body>
         <h1>Total</h1>
           <table class= "table table-bordered table-hover" >
@@ -7,6 +7,7 @@
                   <tr>
                       <td>Nome</td>
                       <td>Total</td>
+                      <td></td>
                   </tr>
               </thread>
               <tbody>
@@ -14,40 +15,16 @@
                   <tr>
                       <td><%= soma.nome %></td>
                       <td><%= soma.total %></td>
+                      <td width="05%">
+                        <%= link_to "Detalhar",detalhar_path(soma.codigo_user),class: "btn btn-primary"%>
+                      </td>
                   </tr>
                   <% end %>
-
-
               </tbody>
           </table>
-
-          <h1>Pontuações</h1>
-            <table class= "table table-bordered table-hover" >
-                <thread>
-                    <tr>
-                        <td>Data</td>
-                        <td>Nome</td>
-                        <td>Codigo</td>
-                        <td>Nota</td>
-                    </tr>
-                </thread>
-                <tbody>
-                  <% @notas.each do |rank| %>
-                    <tr>
-                        <td><%= rank.data %></td>
-                        <td><%= rank.nome %></td>
-                        <td><%= rank.codigo %></td>
-                        <td><%= rank.nota %></td>
-                    </tr>
-                    <% end %>
-
-
-                </tbody>
-            </table>
-
-            <hr>
-              <%= paginate @notas %>
-            <hr>
+          <hr>
+            <%= paginate @total %>
+          <hr>
     </body>
   </div>
 </html>
