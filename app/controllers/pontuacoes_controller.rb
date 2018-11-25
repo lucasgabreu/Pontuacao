@@ -1,10 +1,10 @@
 class PontuacoesController < ApplicationController
 
   def index
-    Dir.foreach(Dir.pwd+"/tmp/arquivos/") { |nome|
+    Dir.foreach(Dir.pwd+"/arquivos/") { |nome|
       if nome.index(/.csv/)
         require 'csv'
-        CSV.foreach(Dir.pwd+"/tmp/arquivos/"+nome, col_sep: ';') do |linha|
+        CSV.foreach(Dir.pwd+"/arquivos/"+nome, col_sep: ';') do |linha|
           if Rank.where(codigo: linha[2],data: linha[0]).empty?
             nova_pontuacao = Rank.new
             nova_pontuacao.data = linha[0]
